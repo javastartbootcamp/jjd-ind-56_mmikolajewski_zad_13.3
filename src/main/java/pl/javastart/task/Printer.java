@@ -34,7 +34,7 @@ public class Printer {
     static void printMostExpensiveProductPriceConvertedInEuro(List<Product> products) {
         BigDecimal expensivePrice = products.get(0).getPriceInEuro();
         for (Product product : products) {
-            if (product.getPriceInEuro().compareTo(expensivePrice) == 1) {
+            if (product.getPriceInEuro().compareTo(expensivePrice) > 0) {
                 expensivePrice = product.getPriceInEuro();
             }
         }
@@ -44,7 +44,7 @@ public class Printer {
     static void printCheapestProductPriceConvertedInEuro(List<Product> products) {
         BigDecimal cheapestPrice = products.get(0).getPriceInEuro();
         for (Product product : products) {
-            if (product.getPriceInEuro().compareTo(cheapestPrice) == -1) {
+            if (product.getPriceInEuro().compareTo(cheapestPrice) < 0) {
                 cheapestPrice = product.getPriceInEuro();
             }
         }

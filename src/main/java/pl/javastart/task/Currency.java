@@ -2,11 +2,11 @@ package pl.javastart.task;
 
 import java.math.BigDecimal;
 
-public class Current {
+public class Currency {
     private String name;
     private BigDecimal rate;
 
-    public Current(String name, BigDecimal rate) {
+    public Currency(String name, BigDecimal rate) {
         this.name = name;
         this.rate = rate;
     }

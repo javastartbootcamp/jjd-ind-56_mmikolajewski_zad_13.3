@@ -3,7 +3,6 @@ package pl.javastart.task;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.List;
-import java.util.Objects;
 
 public class Product {
     private String name;
@@ -35,10 +34,10 @@ public class Product {
 
     }
 
-    public void updatePriceInEuro(List<Current> listOfCurrentsDataBase) {
-        for (Current current : listOfCurrentsDataBase) {
-            if (currency.equals(current.getName())) {
-                priceInEuro = price.divide(current.getRate(), 3, RoundingMode.HALF_UP);
+    public void updatePriceInEuro(List<Currency> listOfCurrentsDataBase) {
+        for (Currency currency : listOfCurrentsDataBase) {
+            if (this.currency.equals(currency.getName())) {
+                priceInEuro = price.divide(currency.getRate(), 3, RoundingMode.HALF_UP);
             }
         }
     }

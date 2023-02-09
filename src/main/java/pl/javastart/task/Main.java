@@ -1,6 +1,5 @@
 package pl.javastart.task;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
@@ -9,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             List<Product> products = Reader.readProduct("src/main/resources/products.csv");
-            List<Current> currents = Reader.readCurrent("src/main/resources/currencies.csv");
-            CurrencyCalculator.convertCurrencyFromListForProductsList(products, currents);
+            List<Currency> currencies = Reader.readCurrency("src/main/resources/currencies.csv");
+            CurrencyCalculator.convertCurrencyFromListForProductsList(products, currencies);
             Printer.printSumAllProductsValueInEuro(products);
             Printer.printAverageOfProductsPriceInEuro(products);
             Printer.printMostExpensiveProductPriceConvertedInEuro(products);
